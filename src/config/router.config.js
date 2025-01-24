@@ -31,6 +31,22 @@ const LoginHandle = (req, res) => {
 
 // POST /login with middleware
 router.post('/login', ValidateData, LoginHandle);
+router.put('/update-user/:userId',(req,res,next)=>{
+    //update iser
+    //logic update
+    let params = req.params;
+    let quey = req.query;
+    console.log(params);
+    res.json({
+        data: {
+            params,
+            query
+        },
+        message: "update user response",
+        status: "ok",
+        options: null
+    })
+})
 
 // Export the router
 module.exports = router;
